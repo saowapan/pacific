@@ -1,0 +1,52 @@
+// Custom Rounded Social Button
+.social{
+	.btn-social {
+		transition: .3s ease; 
+	  	width: 2.5rem;
+	  	height: 2.5rem;
+	  	background-color: #fff;
+	  	color: $main;    
+	  	font-size: 25px;
+	  	&:hover{
+	  		text-decoration: none;
+	  		color: $primary;
+	  	}
+	}
+	.list-inline-item{
+		transition: .3s ease; 
+		&:not(:last-child){
+			margin-right: 2px;
+		}
+		&:not(:first-child){
+			margin-left: 2px;
+		}
+	}
+}
+
+
+@media (min-width: 1199px){
+	.social{
+		.btn-social {
+			width: 3.25rem;
+		  	height: 3.25rem;
+		}  	
+		.list-inline-item{
+			&:not(:last-child){
+				margin-right: 7.5px;
+			}
+			&:not(:first-child){
+				margin-left: 7.5px;
+			}
+		}
+	}
+}
+
+@media (max-width: 991px){
+	.social{
+		.btn-social {
+		  	width: 2rem;
+		  	height: 2rem;    
+		  	font-size: 20px;
+		}
+	}	
+}

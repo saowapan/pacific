@@ -1,0 +1,215 @@
+#mainNav{
+    padding: 0;
+    &.fixed-top{
+        .logo-fixed{
+            opacity: 1;
+        }
+    }
+    .logo-fixed{
+        opacity: 0;
+        transition: .3s ease;
+    }
+    .menu{
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .navbar-nav {
+        li.nav-item {
+            a.nav-link{
+
+                text-transform: capitalize; 
+                color: $white;
+                padding: 20px 10px;
+                line-height: 1;
+                letter-spacing: $spacing2;
+
+                &:hover , &.active {
+                  color: $primary;
+                }  
+                &:active, &:focus {
+                  color: $white;
+                } 
+            }
+        }
+    }
+    .book-now{
+        background-color: $primary;
+        color: $main;
+        position: relative;
+        right: 0;
+        top: 0;
+        letter-spacing: $spacing2;
+        line-height: 1;
+        padding: 20px;
+        padding-left: calc(20px + 20px);
+        margin-left: 20px;
+
+        &:after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            border-left: 17px solid $secondary;
+            border-top: 28px solid transparent;
+            border-bottom: 28px solid transparent;
+        }
+        &:hover{
+            text-decoration: none;
+        }
+    }  
+}
+/* Menu on Mobile */
+#mainNav{
+    .button-menu{
+        padding: 0;
+        border: none;
+        background: $secondary;
+        color: #fff;
+        i{
+            margin-right: 10px;
+        }
+        &:focus{
+            outline:none;
+        }    
+    } 
+}
+#MenuMobile{
+    background-color: $secondary;
+    .modal-dialog{
+        max-width: 100%;
+        margin: 0;
+        .modal-header{
+            border:none;
+            padding: 0 20px;
+            .close{
+                color: #fff;
+                font-size: inherit;
+                text-shadow: none;
+                opacity: 1;
+                padding: 0;
+                margin: 0;
+                line-height: 56px;
+                font-weight: unset;
+                i{
+                    margin-right: 10px;
+                }
+            }   
+        }
+        .modal-content{
+            border:none;
+            border-radius: 0;
+            background-color: $secondary;
+            height: calc(100vh);
+            .navbar-nav{
+                text-align: center;
+                text-transform: uppercase;
+                font-size: larger;
+                letter-spacing: $spacing2;
+                a{
+                    color: #fff;
+                    padding: 15px 0;      
+                    display: inline-block;  
+                }
+            }
+        }
+        .modal-footer{
+            @include prefixer(flex-direction, column);
+            border: none;
+            padding-bottom: 40px;
+            .social .btn-social{
+                color: $secondary;
+            }
+            div{
+                text-transform: uppercase;
+                letter-spacing: $spacing2;
+                color: #fff;
+                margin: 0 0 20px; 
+
+            }
+        }
+    }
+}
+@media (max-width: $maximum_check_1){
+    #mainNav{
+        .container{ 
+            max-width: 100%;
+            padding: 0 0 0 20px;
+        }
+    }    
+}
+@media (max-width: 1199px){
+    #mainNav {
+        .navbar-nav {
+            li.nav-item {
+                a.nav-link{
+                    padding: 20px 8px;
+                }
+            }
+        }
+        .book-now{
+            margin-left: 0px; 
+        }
+    }            
+}
+@media (max-width: 991px){
+    #mainNav {
+        .menu{
+            display: none;
+        }
+    }
+}
+@media (max-width: 575px){
+    #mainNav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 67px;
+        height: 67px;
+        z-index: 2;
+        padding-right: 0 !important;
+        .book-now,.logo-fixed{
+            display: none;
+        }
+        .container{
+            padding: 0;
+            @include prefixer(justify-content, center);
+            height: 100%;
+        }
+        .button-menu{
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/icon-menu.png);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            span{
+                display: none;
+            }
+            i{
+                margin: 0;
+                opacity: 0;
+            }
+        }
+    }
+    #MenuMobile {
+        top: 67px;
+        .modal-dialog {
+            .modal-header {
+                display: none;
+            }
+            .modal-content{
+                height: calc(100vh - 67px);
+            }
+        }        
+    } 
+    .modal-backdrop{
+        top: 67px;    
+    }   
+}

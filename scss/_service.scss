@@ -1,0 +1,137 @@
+/* Service */
+.services{
+	.service-item{
+		.image{
+			height: 240px;
+		    overflow: hidden;
+		    margin-bottom: 60px;
+		    @extend .flex-center;
+			img{
+				height: 100%;
+			}
+		}
+		.content{
+			color: $main;
+			background-color: #fff;
+			padding: 20px;
+		    text-align: center;
+		    position: absolute;
+		    bottom: 0;
+		    width: 100%;
+		    height: 60px;
+		    z-index: 1;
+		    transition: .3s ease; 
+		    @include prefixer(flex-direction, column);
+		    @include prefixer(justify-content, center);
+			h3{
+    			font-size: larger;
+    			margin-bottom: 0;
+			}
+			p{
+				margin: 10px 0 0;
+			}
+			&:after{
+		    	width: 110px;
+			    height: 110px;
+			    content: "";
+			    background-image: url(../img/sailboat.png);
+			    display: block;
+			    position: absolute;
+			    top: -55px;
+			    left: 50%;
+			    transform: translateX(-50%);
+			    opacity: 0;
+			    transition: .3s ease; 
+		    }
+		}
+		.service-hover{
+			position: relative;
+		    overflow: hidden;
+		    &:after{
+		    	width: 100%;
+		    	height: 100%;
+		    	content: "";
+		    	background-color: $primary;
+		    	position: absolute;
+		    	left: 0;
+		    	top: 0;
+		    	opacity: 0;
+		    	transition: .3s ease;
+		    	border-radius: 0.25rem;
+		    }	
+		    &:hover{
+		    	&:after{ 
+		    		opacity: 0.5;
+		    	}
+		    	.content{
+		    		@include valueprefixer(display, flex);  
+		    		height: 40%;
+		    		&:after{
+		    			opacity:1;
+		    		}
+		    	}
+		    }
+		}
+	}
+}
+@media (max-width: $maximum_check_1){	
+	.services{
+		.service-item{
+			.image{
+			    height: 202.5px;
+			}
+			.service-hover:hover .content{
+			    height: 45%;
+			}
+		}
+	}			
+}
+@media (max-width: 1199px){	
+	.services{
+		.service-item{
+			.image{
+			    height: 157px;
+			}
+			.service-hover:hover .content{
+			    height: 60%;
+			}
+		}
+	}			
+}
+@media (max-width: 991px){	
+	.services{
+		.service-item{
+			.image{
+			    height: 275px;
+			}
+			.service-hover:hover .content{
+			    height: 40%;
+			}
+		}
+	}			
+}
+@media (max-width: 767px){	
+	.services{
+		.service-item{
+			.image{
+			    height: 185px;
+			}
+			.service-hover:hover .content{
+			    height: 50%;
+			}
+		}
+	}			
+}
+@media (max-width: 575px){
+	.services{
+		.service-item {
+			.image{
+				height: auto;
+				img{
+					height: auto;
+					width: 100%;
+				}
+			}
+		}
+	}		
+}

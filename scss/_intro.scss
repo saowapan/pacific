@@ -1,0 +1,108 @@
+.intro{
+	position: relative;
+	bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    max-height: 100%;
+    overflow: hidden;
+    min-height: 500px;
+	#video{
+	    position: fixed;
+	    top: 50%;
+	    left: 50%;
+	    min-width: 100%;
+	    min-height: 100%;
+	    width: auto;
+	    height: auto;
+	    z-index: -100;
+	    -webkit-transform: translate(-50%,-50%);
+	    transform: translate(-50%,-50%);
+	    -webkit-transition: opacity 1s;
+	    transition: opacity 1s;
+	}
+	.overlay{
+		display: inline-block;
+	    -webkit-transform: translateY(-50%);
+	    transform: translateY(-50%);
+	    position: absolute;
+	    top: 50%;
+	    left: 0;
+	    width: 100%;
+	    .content{
+	    	text-align: center;
+    		width: 70%;
+    		color: #fff;
+    		.title{
+    			margin: 40px 0;
+    			line-height: 1.3;
+    			&:before, &:after{
+    				content: '';
+    				display: block;
+    				width: 170px;
+    				margin: auto; 
+    			}
+    			&:before{
+ 					padding-bottom: 25px;
+ 					border-top: 1px solid #fff; 
+    			} 
+    			&:after{
+    				padding-top: 25px;
+ 					border-bottom: 1px solid #fff; 
+    			}
+    		}
+    		.play{
+    			margin: 20px 0 0;
+			    text-transform: uppercase;
+			    letter-spacing: $categorySpacing;
+    		}
+    		.tofun{
+    			margin-top: 7%;
+    			display: block;
+    		}
+	    }
+	}
+}
+#popupVideo{
+	padding-right: 0 !important;
+	.modal-dialog{
+	    max-width: 100%;
+	    margin: auto;
+	    height: 100%;
+	    .modal-content{
+	    	background: rgba(0, 0, 0, 0.7);
+    		border: none;
+    		height: 100%;
+    	    padding: 15px;
+    		@include prefixer(justify-content, center);
+	    }
+	    .close{
+	    	background-image: url(../img/cross-out.png);
+		    background-position: 50%;
+		    background-repeat: no-repeat;
+		    width: 50px;
+		    height: 50px;
+		    position: absolute;
+		    right: 5px;
+		    top: 5px;
+		    opacity: 1;
+	    }
+	}
+}
+@media (max-width: 1199px){
+	.intro {
+		.overlay .content{
+			width: 100%;
+		}
+	}
+}
+@media (max-width: 575px){
+	.intro {
+		height: calc(100vh) !important;
+		.overlay{
+		    top: calc(50% + 35px);
+		}
+	}
+}

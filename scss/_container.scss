@@ -1,0 +1,29 @@
+
+section{
+	padding: 0;
+}
+@media (min-width: 414px){
+	
+}
+/* max-width: 540px; */ /* sm */
+@media (min-width: 576px){
+
+}
+/* max-width: 720px; */ /* md */
+@media (min-width: 768px){
+
+}
+/* max-width: 960px; */ /* lg */
+@media (min-width: 992px){
+
+}
+/* max-width: 1140px; */ /* xl */
+@media (min-width: 1200px){
+
+}
+/* xxl */
+@media (min-width: $maximum_check){
+	.container{
+	    max-width: $maximum_container;
+	}	
+} 
